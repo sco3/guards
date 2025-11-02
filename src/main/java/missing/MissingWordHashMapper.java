@@ -24,10 +24,21 @@ public class MissingWordHashMapper {
 				}
 			}
 		}
+		System.out.println(sentMap);
 		var result = new ArrayList<String>();
-		for (var entry : sentMap.entrySet()) {
-			for (int i = 0; i < entry.getValue(); i++) {
-				result.add(entry.getKey());
+		for (var word : sentWords) {
+			var count = sentMap.get(word);
+			if (count != null) {
+				if (count > 0) {
+					result.add(word);
+				}
+
+				count--;
+				if (count == 0) {
+					sentMap.remove(word);
+				} else {
+					sentMap.put(word, count);
+				}
 			}
 		}
 
