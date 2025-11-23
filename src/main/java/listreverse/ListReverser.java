@@ -23,6 +23,7 @@ public class ListReverser {
 		ls.addAll(asList(1, 2, 3, 4));
 
 		var rev = reverse(ls);
+		ls.reversed();
 
 		out.println("Out: " + rev);
 
