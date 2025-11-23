@@ -17,8 +17,18 @@ public class Reverser {
 		return new String(str);
 	}
 
+	public static String reverseRec(String s) {
+		if (s.length() <= 1) {
+			return s;
+		}
+		return (reverseRec(s.substring(1)) + s.charAt(0));
+	}
+
 	public static void main(String[] argv) {
-		System.out.println("Reversed: " + reverse("12345ДОД"));
+		String s = "12345";
+		System.out.println("Original: " + s);
+		System.out.println("Reversed: " + reverseRec(s));
+		System.out.println("Reversed: " + reverse(s));
 	}
 
 }
