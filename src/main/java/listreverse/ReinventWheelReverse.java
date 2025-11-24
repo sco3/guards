@@ -45,6 +45,7 @@ public class ReinventWheelReverse {
 
 		while (cur != null) {
 			out.println(prev + " | " + cur);
+			
 			var next = cur.next;
 			cur.next = prev;
 			prev = cur;
