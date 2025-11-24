@@ -9,10 +9,10 @@ public class Palindrome {
 		int left = 0;
 		int right = c.length - 1;
 		while (left < right) {
-			while (!Character.isAlphabetic(c[left])) {
+			while ((left < right) && (!Character.isLetterOrDigit(c[left]))) {
 				left++;
 			}
-			while (!Character.isAlphabetic(c[right])) {
+			while ((left < right) && (!Character.isLetterOrDigit(c[right]))) {
 				right--;
 			}
 			char cLeft = Character.toLowerCase(c[left]);
@@ -40,6 +40,8 @@ public class Palindrome {
 		test("asdf f d s.a", true);
 
 		test("asdf f d c.a", false);
+		test("!!!", true);
+		test("A1A", true);
 
 	}
 
