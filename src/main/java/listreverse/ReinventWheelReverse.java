@@ -20,6 +20,7 @@ public class ReinventWheelReverse {
 				cur = cur.next;
 			}
 			sb.append(cur.item);
+			sb.append("->null");
 
 			return sb.toString();
 		}
@@ -41,11 +42,10 @@ public class ReinventWheelReverse {
 
 		LinkList prev = null;
 		var cur = head;
-		LinkList next = null;
 
 		while (cur != null) {
-			out.println(prev + " | " + cur + " | " + next);
-			next = cur.next;
+			out.println(prev + " | " + cur);
+			var next = cur.next;
 			cur.next = prev;
 			prev = cur;
 			cur = next;
